@@ -1,0 +1,30 @@
+<div ng-controller="Tasks"><br><br>
+	<h2>Tasks</h2><br><br>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1 container-fluid">
+				<table class="table table-bordered">
+					<tr>
+						<th>Task Id</th>
+						<th> Customer </th>
+						<th> Description </th>
+						<th> Date </th>
+						<th> Done? </th>
+						<th> Update </th>
+						<th> Delete </th>
+					</tr>
+					<tr ng-if="task" ng-repeat="(i, task) in tasks">
+						<td>{{task._id}}</td>
+						<td>{{task.customer.name}}</td>
+						<td>{{task.desc}}</td>
+						<td>{{task.date}}</td>
+						<td><input type="checkbox" ng-model="task.complete"> Done?</td>
+						<td><button ng-click="updateTask(task._id, task.complete)" class="btn btn-defaultactive">Update</button></td>
+						<td><button ng-click="deleteTask(task._id, i)" class="btn btn-defaultactive">Delete</button></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

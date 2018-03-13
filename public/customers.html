@@ -1,0 +1,21 @@
+<div ng-controller="Customers"><br><br>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1 container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<input type="text" class="col-md-12 form-control" ng-model="desc" placeholder="write here a task and assign a customer from the dropdown">
+					</div><br><br><br><br><br><br>
+					<div class="col-md-4" style="text-align: left !important;">
+						<select ng-model="customer" class="form-control">
+							<option ng-repeat="customer in customers" value={{customer}}>{{customer.name}}</option>
+						</select>
+					</div>
+					<div>
+						<button ng-click="createTask()" class="btn btn-default btn-lg active">GO!</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
